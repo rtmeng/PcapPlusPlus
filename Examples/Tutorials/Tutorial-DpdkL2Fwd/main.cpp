@@ -61,7 +61,7 @@ void printStats(pcpp::DpdkDevice* rxDevice, pcpp::DpdkDevice* txDevice)
 int main(int argc, char* argv[])
 {
 	// Register the on app close event handler
-	pcpp::ApplicationEventHandler::getInstance().onApplicationInterrupted(onApplicationInterrupted, NULL);
+	pcpp::ApplicationEventHandler::getInstance().onApplicationInterrupted(onApplicationInterrupted, nullptr);
 
 	// Initialize DPDK
 	pcpp::CoreMask coreMaskToUse = pcpp::getCoreMaskForAllMachineCores();
@@ -69,14 +69,14 @@ int main(int argc, char* argv[])
 
 	// Find DPDK devices
 	pcpp::DpdkDevice* device1 = pcpp::DpdkDeviceList::getInstance().getDeviceByPort(DEVICE_ID_1);
-	if (device1 == NULL)
+	if (device1 == nullptr)
 	{
 		std::cerr << "Cannot find device1 with port '" << DEVICE_ID_1 << "'" << std::endl;
 		return 1;
 	}
 
 	pcpp::DpdkDevice* device2 = pcpp::DpdkDeviceList::getInstance().getDeviceByPort(DEVICE_ID_2);
-	if (device2 == NULL)
+	if (device2 == nullptr)
 	{
 		std::cerr << "Cannot find device2 with port '" << DEVICE_ID_2 << "'" << std::endl;
 		return 1;
